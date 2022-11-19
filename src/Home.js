@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProfileAction } from "./redux/slices/githubSlices";
 import {Link} from "react-router-dom"
+import Loading from "./Loading";
 
 function Home() {
   const [user, setUser] = useState(null);
@@ -50,9 +51,7 @@ function Home() {
         </form>
       </div>
       {loading ? (
-        <h1 className="loading-text">
-          loading, please wait...
-        </h1>
+        <Loading/>
       ) : error ? (
         <h2 className="loading-text">
           {error?.data?.message}

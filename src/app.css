@@ -13,12 +13,6 @@ body {
     background-color: var(--background);
 }
 
-.loading-text {
-    margin-top: 100px;
-    text-align: center;
-    color: var(--black);
-    font-size: 24px;
-}
 .home {
     display: flex;
    align-items: center;
@@ -160,3 +154,39 @@ padding: 10px;
 
 }
 
+
+.loading-conteiner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.loading {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color:#0bcece;
+    background: linear-gradient(0deg, transparent 50%, #0bcece);
+    animation: rotate 1s linear infinite;
+}
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+ .loading::before {
+    content:"";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background:#fff;
+    border-radius: 50%;
+    z-index: 1;
+}
